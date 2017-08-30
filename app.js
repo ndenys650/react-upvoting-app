@@ -1,4 +1,3 @@
-// create variables that hold data information and respond to user interaction
 const ProductList = React.createClass({
 	getInitialState: function () {
 		return {
@@ -8,7 +7,6 @@ const ProductList = React.createClass({
 	componentDidMount: function () {
 		this.updateState();
 	},
-	// auto re render site based on vote info
 	updateState: function () {
 		const products = Data.sort((a, b) => {
 			return b.votes - a.votes;
@@ -26,7 +24,6 @@ const ProductList = React.createClass({
 		console.log(productId + " was upvoted.");
 	},
 	render: function () {
-		// created variable for data pulled from database
 		const products = this.state.products.map((product) => {
 			return (
 				<Product 
@@ -42,8 +39,6 @@ const ProductList = React.createClass({
      			/>
 			);
 		});
-/
-// return div with app
 		return (
 			<div className='ui items'>
 				{products}
@@ -51,14 +46,11 @@ const ProductList = React.createClass({
 		);	
 	},
 });
-/
 const Product = React.createClass({
-	// class that holds upvote count
 	handleUpVote: function () {
 		this.props.onVote(this.props.id);
 	},
 	render: function () {
-		// users profile and votes
 		return (
 			<div className='item'>
 				<div className='image'>
@@ -88,7 +80,7 @@ const Product = React.createClass({
 		);
 	},
 });
-// data renders to content ID
+
 ReactDOM.render(
 	<ProductList />,
 	document.getElementById('content')
