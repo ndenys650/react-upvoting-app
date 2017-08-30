@@ -1,3 +1,5 @@
+### Discovered running on local IP produces correct App
+
 ### Running the app
 
 1. Ensure you have `npm` installed.
